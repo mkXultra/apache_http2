@@ -16,6 +16,7 @@ COPY ./resoures/000-default.conf /etc/apache2/sites-available/
 # RUN a2dissite 000-default.conf
 
 COPY ./resoures/index.html /var/www/mysite.com/
+COPY ./resoures/index2.html /var/www/mysite.com2/index.html
 # RUN apache2ctl configtest
 RUN chmod 777 /var/www/mysite.com/index.html
 RUN chmod 777 /etc/apache2/sites-enabled/000-default.conf
