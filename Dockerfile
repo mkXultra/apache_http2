@@ -34,5 +34,8 @@ RUN echo "Listen 8080" >> /etc/apache2/ports.conf
 # copy local cert
 COPY ./localhost-cert.pem /etc/ssl/certs/mycert.crt
 COPY ./localhost-privkey.pem /etc/ssl/private/mycert.key
+
+COPY ./gcp-cert.pem /etc/ssl/certs/gcp.crt
+COPY ./gcp-privkey.pem /etc/ssl/private/gcp.key
 EXPOSE 8080
 # ENTRYPOINT [ "bash" ]
