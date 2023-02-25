@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  apache:
+    container_name: apache
+    build:
+      context: .
+    ports:
+      - 9080:80
+      - 8443:443
+      - 8080:8080
+    environment:
+      TZ: "Asia/Tokyo"
+    tty: true
+    volumes:
+      - ./localhost-cert.pem:/etc/ssl/certs/mycert.crt
+      - ./localhost-privkey.pem:/etc/ssl/private/mycert.key
